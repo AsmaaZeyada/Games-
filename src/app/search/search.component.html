@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-3 col-3">
+      <div class="logo">
+        <p routerLink="/">Games</p>
+      </div>
+    </div>
+    <div class="col-md-9 col-9">
+      <div class="search-bar d-flex align-items-center justify-content-end">
+        <label for=""><i class="fa-solid fa-magnifying-glass"></i></label>
+        <input (input)="detectedChanges($event)" type="search" routerLink="/home" placeholder="Search 500,000+ games" class="form-control w-50 ms-3">
+      </div>
+    </div>
+  </div>
+</div>

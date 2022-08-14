@@ -1,0 +1,177 @@
+.details-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.game {
+  &-banner {
+    height: 65vh;
+    overflow: hidden;
+
+    &-img {
+      filter: blur(1px);
+    }
+  }
+
+  &-content {
+    text-align: center;
+    position: relative;
+    bottom: 250px;
+  }
+
+  &-header {
+    margin-bottom: 40px;
+
+    &-title {
+      font-size: 70px;
+      color: #fff;
+      line-height: 70px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    &-date {
+      color: #fff;
+      text-shadow: 0 0 10px rgb(63 81 181 / 85%);
+      font-weight: 700;
+    }
+    &-genres {
+      color: #fff;
+      font-size: 22px;
+      text-shadow: 0 0 10px rgb(63 81 181 / 85%);
+      font-weight: 700;
+    }
+  }
+}
+
+.details {
+  ::ng-deep mwl-gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+
+    .dial {
+      stroke-width: 10;
+    }
+    .value {
+      stroke-dasharray: none;
+      stroke-width: 10;
+    }
+    .value-text {
+      fill: #fff;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
+  .game-gauge {
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    &-label{
+      font-size: 20px;
+      color: #fff;
+      text-shadow: 0 0 10px rgb(63 81 181 / 85%);
+      position: relative;
+      bottom: 60px;
+    }
+  }
+}
+
+@media screen and (max-width:568px)
+{
+  .game-gauge {
+    position: absolute;
+    top: 2% !important;
+    left: 75% !important;
+  }
+
+  ::ng-deep mwl-gauge {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .game-gauge-label {
+    font-size: 16px !important;
+  }
+
+  .game-header-title {
+    font-size: 20px !important;
+    line-height: 35px !important;
+  }
+
+  .game-header-date , .game-header-genres {
+    font-size: 14px !important;
+  }
+
+  .game-content {
+    bottom: 389px !important;
+  }
+
+  .game-header {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (min-width:569px) and (max-width:768px)
+{
+  .game-gauge {
+    position: absolute;
+    top: 2% !important;
+    left: 75% !important;
+  }
+
+  ::ng-deep mwl-gauge {
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 25px !important;
+  }
+
+  
+  .game-gauge-label {
+    font-size: 18px !important;
+  }
+
+  .game-header-title {
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
+
+  .game-header-date , .game-header-genres {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width:769px) and (max-width:992px)
+{
+  .game-gauge {
+    position: absolute;
+    top: 2% !important;
+    left: 75% !important;
+  }
+
+  ::ng-deep mwl-gauge {
+    width: 100px !important;
+    height: 100px !important;
+    margin-bottom: 25px !important;
+  }
+
+  
+  .game-gauge-label {
+    font-size: 18px !important;
+  }
+
+  .game-header-title {
+    font-size: 45px !important;
+    line-height: 35px !important;
+  }
+
+  .game-header-date , .game-header-genres {
+    font-size: 16px !important;
+  }
+}
+
+

@@ -1,0 +1,63 @@
+.parent {
+  background: rgb(63 81 181 / 61%);
+  margin-top: 50px;
+  padding: 8px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: transparent;
+  border-bottom: solid 3px #fff;
+  border-radius: 0;
+}
+
+.nav-pills .nav-link {
+  color: #fff;
+}
+
+ul {
+  background: rgb(63 81 181 / 85%);
+  color: #fff;
+}
+
+ul li {
+  margin: 0 20px;
+}
+
+.data {
+  text-align: left;
+}
+
+.tab-content {
+  padding: 5px 20px;
+}
+
+.desc {
+  height: 45px;
+  overflow: hidden;
+}
+
+.show {
+  overflow: visible;
+  line-height: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.fa-thumbs-up {
+  color: rgb(18, 238, 18);
+}
+
+.fa-thumbs-down {
+  color: red;
+}
+
+@media screen and (max-width:568px)
+{
+  .parent {
+    margin: 20px 0;
+  }
+
+  ul li {
+    margin: 0 !important;
+  }
+}

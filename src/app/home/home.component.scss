@@ -1,0 +1,88 @@
+.game {
+  box-shadow: 4px 3px 8px 0px rgba(204, 29, 248, 0.22);
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px ;
+  transition: all 0.3s;
+}
+
+.pic img , .text {
+  height: 200px;
+}
+
+select {
+  cursor: pointer;
+}
+
+.content {
+  background-color: rgb(26, 25, 25);
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px ;
+  transition: all 0.3s;
+  padding: 20px 5px;
+}
+
+.content img {
+  width: 20px;
+  margin: 0 5px;
+}
+
+.content img[src='assets/image/ios.svg'] {
+  width: 15px;
+}
+
+.pic .layer {
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.layer p {
+  font-size: 17px;
+  color: white;
+}
+
+.pic {
+  overflow: hidden;
+}
+
+.pic img {
+  transition: all 0.3s;
+}
+
+.game:hover {
+  box-shadow: 4px 3px 11px 6px rgba(204, 29, 248, 0.46);
+  transform: translateY(-3px);
+}
+
+.game:hover .layer {
+  opacity: 0.6;
+  top: 0;
+}
+
+.game:hover .content {
+  background-color: rgb(53, 52, 52);
+}
+
+.game:hover img {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width:568px)
+{
+
+  .sortBy {
+    margin-top: 0 !important;
+  }
+
+  .sorted {
+    width: 90% !important;
+  }
+}

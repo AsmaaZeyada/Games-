@@ -1,0 +1,85 @@
+<div class="parent">
+  <div class="tab">
+    <ul class="nav nav-pills mb-3 d-flex justify-content-center mb-4 py-2" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="true">About</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-screenshot-tab" data-bs-toggle="pill" data-bs-target="#pills-screenshot" type="button" role="tab" aria-controls="pills-screenshot" aria-selected="false">ScreenShots</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-video-tab" data-bs-toggle="pill" data-bs-target="#pills-video" type="button" role="tab" aria-controls="pills-video" aria-selected="false">Video</button>
+      </li>
+    </ul>
+
+    <div class="tab-content mb-5" id="pills-tabContent">
+
+      <div class="tab-pane fade show active" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab">
+        <div class="data">
+          <p *ngIf="platform" class="">Platform : 
+            <span *ngFor="let game of gameDetails.parent_platforms; let last  = last">{{game.platform.name}}
+              <span *ngIf="!last"> , </span>
+            </span>
+          </p>
+
+          <p *ngIf="publisher" class="">Publishers : 
+            <span *ngFor="let game of gameDetails.publishers; let last  = last">{{game.name}}
+              <span *ngIf="!last"> , </span>
+            </span>
+          </p>
+
+          <p *ngIf="gameDetails.website">
+            website : 
+            <a [href]="gameDetails.website" target="_blank">{{gameDetails.website}}</a>
+          </p>
+
+          <h5 *ngIf="gameDetails.description" class="desc" [class.show]="show" [innerHTML]="gameDetails.description"></h5>
+          <a *ngIf="gameDetails.description" (click)="show = !show" class="text-info text-decoration-none">{{ show ? 'Show less': 'Show More...' }}</a>
+
+          <p class="mt-4">
+            <span *ngFor="let rate of gameDetails.ratings">
+              <span *ngIf="rate.title === 'exceptional'">
+                <i class="fa-solid fa-thumbs-up"></i> 
+                <span class="me-4"> {{rate.count}}</span>
+              </span>
+              <span *ngIf="rate.title === 'skip'">
+                <i class="fa-solid fa-thumbs-down"></i>
+                <span> {{rate.count}}</span>
+              </span>
+            </span>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-screenshot" role="tabpanel" aria-labelledby="pills-screenshot-tab">
+        <div class="container-fluid">
+          <div class="row gy-4">
+            <div *ngFor="let image of screenshots" class="col-md-6">
+              <div class="pic">
+                <img [src]="image.image" class="w-100" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+        
+        <div *ngIf="allVideo.length >=1">
+          <div *ngFor="let video of allVideo">
+            <video controls [src]="video.data?.max" width="100%">  
+            </video>          
+        </div>
+      </div>
+
+      <div *ngIf="allVideo.length < 1">
+        <p >No Video</p>
+      </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
